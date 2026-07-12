@@ -22,7 +22,7 @@ npm run deploy
 ```
 
 The site uses the existing GitHub Pages homepage path:
-`https://UF-Design-Build-Fly.github.io/Website`
+`https://UF-Design-Build-Fly.github.io/`
 
 ## Updated content
 
