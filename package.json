@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "0.2.0",
-  "homepage": "https://UF-Design-Build-Fly.github.io/Website",
+  "homepage": "https://UF-Design-Build-Fly.github.io/",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
