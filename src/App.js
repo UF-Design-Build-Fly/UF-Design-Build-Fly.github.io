@@ -123,7 +123,7 @@ function Navbar() {
   const title = usePageTitle();
   return (
     <header className="navbar">
-      <NavLink className="brand" to="/Website/?title=Home" aria-label="Design / Build / Fly at the University of Florida home">
+      <NavLink className="brand" to="/?title=Home" aria-label="Design / Build / Fly at the University of Florida home">
         <img src={`${ASSET}/media/images/logos/dbf-gator-plane-mark-transparent.png`} alt="Design / Build / Fly mark" />
         <span>
           <strong>Design / Build / Fly</strong>
@@ -141,7 +141,7 @@ function Navbar() {
           <NavLink
             key={page.title}
             className={title === page.title ? "selected page_link" : "page_link"}
-            to={`/Website/?title=${page.title}`}
+            to={`/?title=${page.title}`}
           >
             {page.label}
           </NavLink>
@@ -330,12 +330,12 @@ function TeamsPage() {
           <SectionHeader eyebrow="Systems highlight" title="Autonomous glider flight control">
             Our systems team developed an autonomous glider that could be dropped from 1,000 ft and land inside a 50x50 ft target square using an onboard flight controller actively navigating the plane to a predetermined GPS coordinate.
 
-This was done over the course of a single semester through the implementation of Ardupilot, custom designed control surfaces, and PID tuning; all while staying under 250 grams!
+            This was done over the course of a single semester through the implementation of Ardupilot, custom designed control surfaces, and PID tuning; all while staying under 250 grams!
           </SectionHeader>
           <SectionHeader eyebrow="Structures highlight" title="Quick-release wing-mounted pylons">
             Our structures team designed a wing-mounted pylon system that could hold almost 600 N without critical deformation while remaining lightweight and manufacturable for the aircraft.
 
-The pylons were also designed for fast attachment and removal, allowing the team to meet a timed mission requirement without sacrificing structural reliability or repeatable setup between flights.
+            The pylons were also designed for fast attachment and removal, allowing the team to meet a timed mission requirement without sacrificing structural reliability or repeatable setup between flights.
           </SectionHeader>
         </div>
         <img className="rounded-image" src={`${ASSET}/media/images/systems/autonomous-glider.jpg`} alt="UF DBF aircraft and autonomous glider work at competition" />
@@ -522,7 +522,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Website/*" element={<Site />} />
+        <Route path="/*" element={<Site />} />
         <Route path="*" element={<Site />} />
       </Routes>
     </BrowserRouter>
