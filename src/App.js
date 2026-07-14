@@ -50,20 +50,22 @@ const sponsors = [
   {
     name: "Airtech",
     logo: "airtech.png",
-    featured: true,
   },
   {
     name: "Innov8tive Designs",
     logo: "innov8tive-designs.png",
-    featured: true,
   },
   {
-    name: "Altium",
-    logo: "altium.png",
+    name: "Polymaker",
+    logo: "polymaker.png",
   },
   {
     name: "Easy Composites",
     logo: "easy-composites.png",
+  },
+  {
+    name: "Altium",
+    logo: "altium.png",
   },
 ];
 

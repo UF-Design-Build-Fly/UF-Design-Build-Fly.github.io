@@ -678,7 +678,7 @@ a {
 }
 
 .sponsor-logo-card {
-  grid-column: span 3;
+  grid-column: span 2;
   min-height: 178px;
   display: flex;
   flex-direction: column;
@@ -692,8 +692,13 @@ a {
 }
 
 .sponsor-logo-card.featured {
-  grid-column: span 2;
-  min-height: 220px;
+  grid-column: 1 / -1;
+  min-height: 250px;
+}
+
+.sponsor-logo-card:nth-child(2),
+.sponsor-logo-card:nth-child(3) {
+  grid-column: span 3;
 }
 
 .sponsor-logo-media {
@@ -716,14 +721,14 @@ a {
 
 .sponsor-logo-card img {
   width: 100%;
-  max-width: 330px;
+  max-width: 280px;
   max-height: 82px;
   object-fit: contain;
 }
 
 .sponsor-logo-card.featured img {
-  max-width: 440px;
-  max-height: 116px;
+  max-width: 760px;
+  max-height: 142px;
 }
 
 .sponsor-logo-card h3 {
@@ -733,9 +738,16 @@ a {
 }
 
 @media (max-width: 980px) {
-  .sponsor-logo-card,
-  .sponsor-logo-card.featured {
+  .sponsor-logo-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .sponsor-logo-card {
     grid-column: span 3;
+  }
+
+  .sponsor-logo-card.featured {
+    grid-column: 1 / -1;
   }
 }
 
