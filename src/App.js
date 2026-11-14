@@ -46,26 +46,44 @@ const sponsors = [
     logo: "ge-aerospace.png",
     featured: true,
     dark: true,
+    url: "https://www.geaerospace.com/",
+    description: "GE Aerospace is a leading provider of jet and turboprop engines and integrated systems for commercial, military, business, and general aviation. Their support helps our team travel to competition each year and continue improving our designs.",
   },
   {
     name: "Airtech",
     logo: "airtech.png",
+    url: "https://www.airtech.com/",
+    description: "Family-owned since 1973, Airtech Advanced Materials Group supplies vacuum bagging and composite tooling materials for industries including aerospace. Their vacuum bags, peel plies, breather cloths, and sealant tapes are essential to our carbon fiber layups.",
   },
   {
     name: "Innov8tive Designs",
     logo: "innov8tive-designs.png",
+    url: "https://innov8tivedesigns.com/",
+    description: "Innov8tive Designs supplies electric power systems for RC hobbyists, industry, and OEMs, including brushless motors, controllers, batteries, propellers, and mounts. Their BadAss motors, batteries, and ESCs are a key part of our propulsion system.",
+  },
+  {
+    name: "Allred & Associates (DragonPlate)",
+    logo: "dragonplate-by-allred.webp",
+    url: "https://dragonplate.com/",
+    description: "Allred & Associates is an engineering and manufacturing firm based in Elbridge, New York. Its DragonPlate brand produces advanced carbon fiber composite shapes and structures that help us elevate our aircraft's performance.",
   },
   {
     name: "Polymaker",
     logo: "polymaker.png",
+    url: "https://polymaker.com/",
+    description: "Polymaker develops 3D printing filaments and resins for makers, engineers, and industry. Their engineering-grade materials help us prototype and produce lightweight parts, tooling jigs, complex lifting surfaces, wings, and empennage structures.",
   },
   {
     name: "Easy Composites",
     logo: "easy-composites.png",
+    url: "https://www.easycomposites.us/",
+    description: "Easy Composites is a manufacturer and supplier of advanced composite materials, equipment, and training resources. Their carbon fiber helps us manufacture high-quality aircraft structures.",
   },
   {
     name: "Altium",
     logo: "altium.png",
+    url: "https://www.altium.com/",
+    description: "Altium Designer is professional printed circuit board design software that combines schematic capture, board layout, and manufacturing outputs, helping us design electronics for our aircraft.",
   },
 ];
 
@@ -187,6 +205,32 @@ function SponsorLogoWall({ className = "" }) {
         </article>
       ))}
     </div>
+  );
+}
+
+function SponsorProfiles() {
+  return (
+    <section className="sponsor-profiles-section">
+      <SectionHeader eyebrow="Our Sponsors" title="Thank you to the sponsors who bring our designs to life">
+        Your support provides the materials, tools, and opportunities that take our aircraft from concept to flight.
+      </SectionHeader>
+      <div className="sponsor-profile-grid">
+        {sponsors.map((sponsor) => (
+          <article className={sponsor.featured ? "sponsor-profile-card featured" : "sponsor-profile-card"} key={sponsor.name}>
+            <div className={sponsor.dark ? "sponsor-profile-logo dark" : "sponsor-profile-logo"}>
+              <img src={`${ASSET}/media/images/sponsors/${sponsor.logo}`} alt={`${sponsor.name} logo`} loading="lazy" />
+            </div>
+            <div className="sponsor-profile-copy">
+              <h3>{sponsor.name}</h3>
+              <p>{sponsor.description}</p>
+              <a href={sponsor.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${sponsor.name} website`}>
+                Visit website <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -434,12 +478,7 @@ function SponsorsPage() {
         ))}
       </section>
 
-      <section className="current-sponsors-section">
-        <SectionHeader eyebrow="Current Sponsors" title="Thank you to our sponsors">
-          These partners help give our members the materials, tools, and support needed to turn design work into flight-ready hardware.
-        </SectionHeader>
-        <SponsorLogoWall className="sponsors-page-wall" />
-      </section>
+      <SponsorProfiles />
 
       <section className="tiers-section">
         <SectionHeader eyebrow="2026-2027" title="Sponsorship levels and benefits" />
